@@ -143,6 +143,43 @@ body{font-family:var(--sans);color:var(--text);background:var(--slate);font-size
 .stewardship-card-title{font-family:var(--serif);font-size:18px;margin-bottom:10px;color:var(--text)}
 .stewardship-card p{font-size:13px;color:var(--muted);line-height:1.8}
 
+/* FLOATING BOT */
+/* bot-fab removed */
+@keyframes ping{0%,100%{transform:scale(1);opacity:1}60%{transform:scale(2);opacity:0}}
+.bot-drawer{position:fixed;bottom:90px;right:28px;width:400px;z-index:300;transform:translateY(20px) scale(.97);opacity:0;pointer-events:none;transition:all .25s cubic-bezier(.4,0,.2,1)}
+.bot-drawer.open{transform:translateY(0) scale(1);opacity:1;pointer-events:all}
+.bot-drawer-inner{background:var(--navy);border-radius:var(--r-xl);overflow:hidden;box-shadow:0 8px 40px rgba(11,31,58,.35),0 2px 8px rgba(0,0,0,.2)}
+.bot-drawer-header{padding:16px 20px 13px;border-bottom:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:space-between}
+.bot-drawer-identity{display:flex;align-items:center;gap:11px}
+.bot-drawer-avatar{width:34px;height:34px;border-radius:10px;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.bot-drawer-eyebrow{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:1px}
+.bot-drawer-title{font-family:var(--serif);font-size:15px;color:white}
+.bot-close{background:rgba(255,255,255,.1);border:none;color:#8aaac0;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .15s;flex-shrink:0}
+.bot-close:hover{background:rgba(255,255,255,.18);color:white}
+.bot-messages{padding:14px;height:300px;overflow-y:auto;display:flex;flex-direction:column;gap:9px;scroll-behavior:smooth}
+.bot-messages::-webkit-scrollbar{width:3px}
+.bot-messages::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:2px}
+.msg{padding:10px 13px;border-radius:var(--r);font-size:13px;line-height:1.6;max-width:90%;word-wrap:break-word}
+.msg.bot{background:var(--navy-light);color:#c8ddf0;align-self:flex-start;border-bottom-left-radius:3px}
+.msg.user{background:var(--teal-dim);color:white;align-self:flex-end;border-bottom-right-radius:3px}
+.msg.error{background:#3a1520;color:#f4a0a8;align-self:flex-start;border-left:2px solid var(--red);font-size:12px}
+.thinking-dots{display:inline-flex;gap:4px;align-items:center;padding:3px 0}
+.thinking-dots span{width:6px;height:6px;border-radius:50%;background:#5a7a98;animation:dot 1.2s ease-in-out infinite}
+.thinking-dots span:nth-child(2){animation-delay:.2s}
+.thinking-dots span:nth-child(3){animation-delay:.4s}
+@keyframes dot{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-5px);opacity:1}}
+.source-tag{display:inline-block;background:rgba(0,168,150,.18);color:#4ad8cc;font-size:10px;padding:2px 8px;border-radius:10px;margin-top:5px;font-weight:500}
+.bot-faqs{padding:0 14px 10px;display:flex;flex-wrap:wrap;gap:6px}
+.bot-faq-pill{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#8aaac0;font-size:11px;padding:5px 11px;border-radius:20px;cursor:pointer;font-family:var(--sans);transition:all .15s;line-height:1.3;text-align:left}
+.bot-faq-pill:hover{background:rgba(0,168,150,.2);border-color:rgba(0,168,150,.4);color:#7ae8de}
+.bot-input-row{padding:12px 14px;border-top:1px solid rgba(255,255,255,.08);display:flex;gap:8px;align-items:flex-end}
+.bot-input{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:var(--r);padding:9px 12px;color:white;font-family:var(--sans);font-size:13px;resize:none;min-height:38px;max-height:80px;outline:none;line-height:1.5;transition:border-color .15s}
+.bot-input::placeholder{color:#3d5a70}
+.bot-input:focus{border-color:var(--teal)}
+.bot-send{background:var(--teal);border:none;border-radius:var(--r);padding:9px 14px;color:white;cursor:pointer;font-size:13px;font-weight:500;white-space:nowrap;font-family:var(--sans);height:38px;transition:background .15s}
+.bot-send:hover:not(:disabled){background:var(--teal-dim)}
+.bot-send:disabled{opacity:.3;cursor:not-allowed}
+
 /* BOT FULL PAGE */
 .bot-page-layout{display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:start}
 .bot-full-panel{background:var(--navy);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-lg)}
